@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/config_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#758194"
+    android:orientation="vertical"
+    tools:context="br.com.sorrydave.connect_dave.ConfigFragment" >
+    
+    <TextView        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/config"
+        android:padding="7dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+     <TextView        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time between tests"
+        android:padding="7dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+
+    <Button
+        android:id="@+id/fiveButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="5 minutes" />
+    
+    
+    <Button
+        android:id="@+id/tenButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="10 minutes" />
+    
+    <Button
+        android:id="@+id/quarterButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="15 minutes" />
+    
+    <Button
+        android:id="@+id/halfButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="30 minutes" />
+    
+    <Button
+        android:id="@+id/hourButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="60 minutes" />
+    
+    <Button
+        android:id="@+id/aplyConfig"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:text="Apply" />
+    
+
+</LinearLayout>
