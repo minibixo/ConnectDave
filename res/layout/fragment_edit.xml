@@ -1,0 +1,83 @@
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"      
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"    
+    android:background="#758194"
+    android:orientation="vertical" 
+    android:id="@+id/EditFragment"
+    tools:context="br.com.sorrydave.connect_dave.EditFragment" >
+   
+	<LinearLayout 
+  	     android:background="#758194"
+   		 android:orientation="vertical" 
+   		 android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"    
+   		 android:layout_weight="9"
+	    >
+	    
+	    
+   	  <TextView        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/register_title"
+        android:textColor="#C9EEF2"        
+        android:textSize="25sp" />
+
+	  <EditText
+	      android:id="@+id/website_website"
+	      android:layout_width="match_parent"
+	      android:layout_height="wrap_content"           
+	      android:textColor="#ffffff"
+	      android:textColorHint="#CACACA"
+	      android:inputType="text"
+	      android:maxLines="1"      	      
+	      android:hint="@string/website_url" >
+	      
+	      <requestFocus />
+	  </EditText>
+	      
+	  <EditText      
+	      android:id="@+id/website_content"
+	      android:layout_width="match_parent"
+	      android:layout_height="wrap_content"     
+	      android:textColor="#ffffff"
+	      android:textColorHint="#CACACA"
+	      android:inputType="text"
+	      android:maxLines="1"      	      
+	      android:hint="@string/website_content" >
+	  </EditText>
+	  
+	  <EditText      
+	      android:id="@+id/website_time"
+	      android:layout_width="match_parent"
+	      android:layout_height="wrap_content"     
+	      android:textColor="#ffffff"
+	      android:textColorHint="#CACACA"
+	      android:maxLines="1"      	
+	      android:inputType="number"      
+	      android:hint="@string/cycletime_test" >
+	  </EditText>	  
+	  	    
+	</LinearLayout>
+ 
+	<Button
+      android:id="@+id/deleteConnection"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:background="#e74c3c"
+      android:text="Delete this connection" />
+	
+   <Button
+      android:id="@+id/applyChanges"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#254b59"
+      android:layout_weight="1"
+      android:text="Apply Changes" />
+  
+    
+</LinearLayout>

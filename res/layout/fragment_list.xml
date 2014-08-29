@@ -25,9 +25,9 @@
         />
     
      <Button
-      android:id="@+id/button1"
+      android:id="@+id/gotoEdit"
       android:layout_width="match_parent"
       android:layout_height="100dp"      
-      android:text="@string/website_button" />
+      android:text="Edit" />
 
 </LinearLayout>
