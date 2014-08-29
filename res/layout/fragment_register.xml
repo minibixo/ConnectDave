@@ -48,7 +48,19 @@
 	      android:inputType="text"
 	      android:maxLines="1"      	      
 	      android:hint="@string/website_content" >
-	  </EditText>	    
+	  </EditText>
+	  
+	  <EditText      
+	      android:id="@+id/website_time"
+	      android:layout_width="match_parent"
+	      android:layout_height="wrap_content"     
+	      android:textColor="#ffffff"
+	      android:textColorHint="#CACACA"
+	      android:inputType="text"
+	      android:maxLines="1"      	      
+	      android:hint="@string/website_content" >
+	  </EditText>	  
+	  	    
 	</LinearLayout>
  
   <Button

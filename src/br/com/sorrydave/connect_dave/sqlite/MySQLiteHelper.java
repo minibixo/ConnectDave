@@ -16,32 +16,30 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
     private static final String KEY_ID = "id";
     private static final String KEY_WEBSITE = "website";
     private static final String KEY_CONTENT = "content";
-    private static final String[] COLUMNS = {KEY_ID, KEY_WEBSITE,KEY_CONTENT};
+    private static final String KEY_TIME = "time";    
+    private static final String[] COLUMNS = {KEY_ID, KEY_WEBSITE,KEY_CONTENT, KEY_TIME};
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "ConnectionDB";
 	
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);  
     }
+    
 	@Override
 	public void onCreate(SQLiteDatabase db) {		
 		String CREATE_CONNECTION_TABLE = "CREATE TABLE connections ( " +
-        "id INTEGER PRIMARY KEY AUTOINCREMENT, " + 
-        "website TEXT, "+
-        "content TEXT )";
-
-		String CREATE_LOG_TABLE = "CREATE TABLE log ( " +
-		        "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-		        "time DATETIME DEFAULT CURRENT_TIMESTAMP, " +
-		        "id_website INTEGER )";
+        "id INTEGER PRIMARY KEY AUTOINCREMENT, " +        
+        "website TEXT, " +
+        "content TEXT," +
+        "time INT )";
 		
-		db.execSQL(CREATE_CONNECTION_TABLE);
-		db.execSQL(CREATE_LOG_TABLE);
-		
+		db.execSQL(CREATE_CONNECTION_TABLE);				
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		String DESTROY = "DESTROY connections IF EXIST";				
+		db.execSQL(DESTROY);	
 	}
 	
 	public void addConnection(Connection connection){
@@ -50,7 +48,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
 		
 		ContentValues values = new ContentValues();
 		values.put(KEY_WEBSITE, connection.getWebsite());  
-		values.put(KEY_CONTENT, connection.getContent()); 
+		values.put(KEY_CONTENT, connection.getContent());
+		values.put(KEY_TIME, connection.getTime());
 		
 		db.insert(TABLE_CONNECTIONS, 
 		        null,
@@ -71,7 +70,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
 	            null, 
 	            null, 
 	            null); 
-	 
 	    if (cursor != null)
 	        cursor.moveToFirst();
 	 
@@ -79,6 +77,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
 	    connection.setId(Integer.parseInt(cursor.getString(0)));
 	    connection.setWebsite(cursor.getString(1));
 	    connection.setContent(cursor.getString(2));
+	    connection.setTime(cursor.getInt(3));
 	 
 	    Log.d("getConnection("+id+")", connection.toString());
 	    return connection;
@@ -99,6 +98,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
 	               connection.setId(Integer.parseInt(cursor.getString(0)));
 	               connection.setWebsite(cursor.getString(1));
 	               connection.setContent(cursor.getString(2));
+	               connection.setTime(cursor.getInt(3));
 	 
 	               connections.add(connection);
 	           } while (cursor.moveToNext());
@@ -113,8 +113,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
 	    SQLiteDatabase db = this.getWritableDatabase();
 	 
 	    ContentValues values = new ContentValues();
-	    values.put("title", connection.getWebsite());  
-	    values.put("author", connection.getContent());
+	    values.put("website", connection.getWebsite());  
+	    values.put("content", connection.getContent());
+	    values.put("time", connection.getTime());
 	 
 	    int i = db.update(TABLE_CONNECTIONS, 
 	            values, 

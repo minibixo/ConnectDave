@@ -30,20 +30,20 @@ public final class R {
     }
     public static final class id {
         public static final int about_fragment=0x7f080001;
-        public static final int action_about=0x7f080017;
-        public static final int action_config=0x7f080016;
-        public static final int action_list_website=0x7f080015;
-        public static final int action_register_website=0x7f080014;
+        public static final int action_about=0x7f080018;
+        public static final int action_config=0x7f080017;
+        public static final int action_list_website=0x7f080016;
+        public static final int action_register_website=0x7f080015;
         public static final int aplyConfig=0x7f080009;
-        public static final int button1=0x7f080010;
+        public static final int button1=0x7f080011;
         public static final int config_fragment=0x7f080003;
         public static final int container=0x7f080000;
         public static final int fiveButton=0x7f080004;
         public static final int halfButton=0x7f080007;
         public static final int hourButton=0x7f080008;
-        public static final int itemContent=0x7f080013;
-        public static final int itemIcone=0x7f080011;
-        public static final int itemWebsite=0x7f080012;
+        public static final int itemContent=0x7f080014;
+        public static final int itemIcone=0x7f080012;
+        public static final int itemWebsite=0x7f080013;
         public static final int list_fragment=0x7f08000a;
         public static final int lstConnections=0x7f08000b;
         public static final int main_fragment=0x7f08000c;
@@ -52,6 +52,7 @@ public final class R {
         public static final int tenButton=0x7f080005;
         public static final int textView1=0x7f080002;
         public static final int website_content=0x7f08000f;
+        public static final int website_time=0x7f080010;
         public static final int website_website=0x7f08000e;
     }
     public static final class layout {

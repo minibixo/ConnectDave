@@ -1,6 +1,7 @@
 package br.com.sorrydave.connect_dave;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.com.sorrydave.connect_dave.sqlite.Connection;
 import br.com.sorrydave.connect_dave.sqlite.MySQLiteHelper;
@@ -37,9 +38,9 @@ public class MainActivity extends Activity {
         
         
         
-        /*
-               List<Connection> list = db.getAllConnections();        
-        db.deleteConnection(list.get(0));        
+      
+       List<Connection> list = db.getAllConnections();        
+       /* db.deleteConnection(list.get(0));        
         db.getAllConnections();
         */
                 

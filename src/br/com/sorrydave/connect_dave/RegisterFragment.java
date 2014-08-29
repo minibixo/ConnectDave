@@ -16,8 +16,10 @@ public class RegisterFragment extends Fragment {
 
 	public String content;
 	public String website;
+	public int time;
 	TextView txtContent;
 	TextView txtWebsite;
+	TextView txtTime;
 	
 	MainActivity mainActivity;
 	
@@ -32,7 +34,8 @@ public class RegisterFragment extends Fragment {
         
         txtWebsite = (TextView)rootView.findViewById(R.id.website_website);
         txtContent = (TextView)rootView.findViewById(R.id.website_content);                
-        
+        txtTime = (TextView)rootView.findViewById(R.id.website_time);
+                
         Button button = (Button)rootView.findViewById(R.id.button1);
         button.setOnClickListener(tapCadastro);
         
@@ -47,11 +50,13 @@ public class RegisterFragment extends Fragment {
 		public void onClick(View v) {
 			content = txtContent.getText().toString();
 	        website = txtWebsite.getText().toString();
-			Log.v("Cadastro", "Connection ADD = ["+ website + ", " + content  + "]");
+	        time = Integer.valueOf(txtWebsite.getText().toString());			
 			Toast.makeText(mainActivity, "Website add to your list", Toast.LENGTH_SHORT).show();
 			txtContent.setText("");
 			txtWebsite.setText("");
-			mainActivity.db.addConnection(new Connection(website, content));
+			txtTime.setText("");
+			
+			mainActivity.db.addConnection(new Connection(website, content, time));
 			mainActivity.db.getAllConnections();
 			
 			
