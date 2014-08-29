@@ -56,9 +56,9 @@
 	      android:layout_height="wrap_content"     
 	      android:textColor="#ffffff"
 	      android:textColorHint="#CACACA"
-	      android:inputType="text"
-	      android:maxLines="1"      	      
-	      android:hint="@string/website_content" >
+	      android:maxLines="1"      	
+	      android:inputType="number"      
+	      android:hint="@string/cycletime_test" >
 	  </EditText>	  
 	  	    
 	</LinearLayout>

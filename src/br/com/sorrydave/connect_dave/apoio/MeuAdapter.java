@@ -45,7 +45,7 @@ public class MeuAdapter extends ArrayAdapter<Connection>{
 		Connection connection = lista.get(position);
 		connectionHolder.website.setText(connection.getWebsite());
 		connectionHolder.content.setText(connection.getContent());
-		connectionHolder.icone.setImageResource(R.drawable.ic_launcher);
+		connectionHolder.icone.setImageResource(R.drawable.disconnect_cross);
 		
 		return linha;
 	}

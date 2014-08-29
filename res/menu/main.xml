@@ -13,15 +13,9 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/list_website" />
-	<item
-        android:id="@+id/action_config"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/website_config" />
   	<item
         android:id="@+id/action_about"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/about" />
-    
+        android:title="@string/about" />    
 </menu>

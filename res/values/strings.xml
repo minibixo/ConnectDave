@@ -13,6 +13,8 @@
     <string name="website_button"> Register </string>
     <string name="website_config"> Config </string>
     <string name="config"> Configuration </string>
-    <string name="list"> Configurations </string>
+    <string name="list"> Connections </string>
+    <string name="cycletime_test"> Cycletime Test </string>
 	<string name="about_content"> Esse aplicativo foi desenvolvido no Brasil pela empresa Sorry Dave, sua principal função´e auxlias os SysAdmins à cuidar de seus servidores, decidimos colocar um preço de 0,99$ para conseguir recursos para continuar aprimorando ele, e não precisar colocar propagandas nele, atrapalhando o usuario final, qualquer dica ou sugestão por favor, entre em contato (philipe@sorrydave.com.br) </string>
+	
 </resources>

@@ -3,7 +3,6 @@ package br.com.sorrydave.connect_dave;
 import br.com.sorrydave.connect_dave.sqlite.Connection;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -50,7 +49,7 @@ public class RegisterFragment extends Fragment {
 		public void onClick(View v) {
 			content = txtContent.getText().toString();
 	        website = txtWebsite.getText().toString();
-	        time = Integer.valueOf(txtWebsite.getText().toString());			
+	        time = Integer.valueOf(txtTime.getText().toString());			
 			Toast.makeText(mainActivity, "Website add to your list", Toast.LENGTH_SHORT).show();
 			txtContent.setText("");
 			txtWebsite.setText("");

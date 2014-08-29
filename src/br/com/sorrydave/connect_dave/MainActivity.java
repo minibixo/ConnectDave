@@ -6,7 +6,6 @@ import java.util.List;
 import br.com.sorrydave.connect_dave.sqlite.Connection;
 import br.com.sorrydave.connect_dave.sqlite.MySQLiteHelper;
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -34,16 +33,17 @@ public class MainActivity extends Activity {
         }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         
-        db = new MySQLiteHelper(this);      
-        
-        
-        
-      
-       List<Connection> list = db.getAllConnections();        
-       /* db.deleteConnection(list.get(0));        
-        db.getAllConnections();
-        */
-                
+       db = new MySQLiteHelper(this);                                   
+       List<Connection> list = db.getAllConnections();       
+       if(list.size() > 0){
+    	   initListFragment();
+       }
+       /*
+        *  
+        * db.deleteConnection(list.get(0));        
+        * db.getAllConnections();
+        * 
+        */                
     }
 	
 	
@@ -67,13 +67,6 @@ public class MainActivity extends Activity {
                 .commit();
 	}
 
-	public void initConfigFragment(){
-		setContentView(R.layout.activity_main);        
-        getFragmentManager().beginTransaction()
-                .replace(R.id.container, new ConfigFragment())
-                .commit();
-	}
-	
 	public void initAboutFragment(){
 		setContentView(R.layout.activity_main);        
         getFragmentManager().beginTransaction()
@@ -103,10 +96,6 @@ public class MainActivity extends Activity {
         }else if(id == R.id.action_list_website) {
         	initListFragment();
         	Log.v("ActionBar", "List Pressionado");
-        	return true;
-        }else if(id == R.id.action_config) {
-        	initConfigFragment();
-        	Log.v("ActionBar", "Config Pressionado");
         	return true;
         }else if(id == R.id.action_about) {
         	initAboutFragment();
